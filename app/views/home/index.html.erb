@@ -1,11 +1,83 @@
-<h1>Hello <span style="font-style: italic;">Gowtham</span> from <span style="color: red;">Simform</span></h1>
-<h2>Your data goes like this</h2>
-<dl>
-<dt style="font-weight: bold;" >College Info<dt>
-<dd><span style="text-decoration: underline;" >name:</span>parul university</dd>
-<dd><span style="text-decoration: underline;" >course:</span>ECE</dd>
-<dd><span style="text-decoration: underline;" >semester:</span>8<dd>
-<dt style="font-weight: bold;" >Bio Data<dt>
-<dd><span style="text-decoration: underline;" >state:</span>ndhra radesh</dd>
-<dd><span style="text-decoration: underline;" >language:</span>telugu</dd>
-</dl>
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>My test page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        li {
+            list-style-type: none;
+        }  
+        body{
+            padding: 2rem;
+        }
+        .item_head{
+            font-weight: bold;
+            flex: auto;
+        }
+        .head{
+            font-weight: bolder;
+        }
+        header{
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .item{
+            padding: 20px;
+        }
+        .cont{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: stretch;
+        }
+    </style>
+    </head>
+  <body clas="card"  >
+    <header class="bg-primary text-center" >
+        <h1 class="text-white head" >Products</h1>
+    </header>
+    <section>
+        <div class="bg-info cont" >
+            <ul>
+                <% @products.each do |product| %>
+                    <li class="item" >
+                        <ul class="text-center bg-light opacity-75 card" >
+                        <li><span class="item_head p-2" >name: </span> <%= product.name %></li>
+                        <li><span class="item_head p-2" >description: </span> <%= product.description %></li>
+                        <li><span class="item_head p-2" >cost: </span> <%= product.cost %></li>
+                        <li><span class="item_head p-2" >status: </span> <%= product.status %></li>
+                        </ul>
+                    </li>
+                <% end%>
+            </ul>
+        </div>
+    </section>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
