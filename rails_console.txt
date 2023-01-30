@@ -1,0 +1,78 @@
+CRUD    
+---Create---
+
+product = Product.new(name: "shampoo", description: "a mild shampoo", cost:100, status: "ordered")
+product.save
+
+product = Product.create(name: "paste", description: "lemon flavour", cost: 40, status:"shipped")
+
+product = Product.new do |p|
+  p.name = "moisturizer"
+  p.description = "a body moisturizing cream"
+  p.cost = 80
+  p.status = "delivered"
+end
+
+---Read---
+
+Product.all
+
+shampoo = Product.find_by(name: "shampoo")
+shampoo
+
+Product.find(3)
+
+product = Product.where(name: "moisturizer")
+product
+
+delivered_products = Product.where(status: "delivered").order(id: :desc)
+delivered_products
+
+---update---
+
+shampoo.name = "shampoo_updated"
+shampoo.save
+shampoo
+
+product = Product.find_by(cost: 50)
+product.update(cost: 70)
+product
+
+Product.find_by(name: "paste")
+product.update(name: "paste_updated", description: "lemon flavour u", cost: 50, status: "not ordered")
+product
+
+Product.update_all"status = 'delivered'"
+Product.all
+
+---Delete---
+
+product = Product.last
+product.destroy
+
+---validations---
+
+reload!
+product= Product.new
+product.save => #false
+
+---callback---
+
+reload!
+Product.create
+#product is initialized
+#name must have a value 
+
+prod.name = "gow"
+prod.save
+=>#name must have a value
+=>#record is successfully created     
+
+[6,7,8,9,10,11,12].each do |id|
+    Product.find(id).destroy
+end
+
+
+
+
+

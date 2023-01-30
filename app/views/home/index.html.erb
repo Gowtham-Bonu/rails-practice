@@ -1,11 +1,45 @@
-<h1>Hello <span style="font-style: italic;">Gowtham</span> from <span style="color: red;">Simform</span></h1>
-<h2>Your data goes like this</h2>
-<dl>
-<dt style="font-weight: bold;" >College Info<dt>
-<dd><span style="text-decoration: underline;" >name:</span>parul university</dd>
-<dd><span style="text-decoration: underline;" >course:</span>ECE</dd>
-<dd><span style="text-decoration: underline;" >semester:</span>8<dd>
-<dt style="font-weight: bold;" >Bio Data<dt>
-<dd><span style="text-decoration: underline;" >state:</span>ndhra radesh</dd>
-<dd><span style="text-decoration: underline;" >language:</span>telugu</dd>
-</dl>
+<header class="bg-primary text-center" >
+    <h1 class="text-white head" >Products</h1>
+</header>
+<section>
+    <div class="bg-info cont" >
+        <ul>
+            <% @products.each do |product| %>
+                <li class="item" >
+                    <ul class="text-center bg-light opacity-75 card" >
+                        <li><span class="item_head p-2" >name: </span> <%= product.name %></li>
+                        <li><span class="item_head p-2" >description: </span> <%= product.description %></li>
+                        <li><span class="item_head p-2" >cost: </span> <%= product.cost %></li>
+                        <li><span class="item_head p-2" >status: </span> <%= product.status %></li>
+                    </ul>
+                </li>
+            <% end%>
+        </ul>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
