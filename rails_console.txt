@@ -72,6 +72,15 @@ prod.save
     Product.find(id).destroy
 end
 
+--------------------active-record-migrations--------------------------------------------------------
+
+ rails g migration AddAgeToAuthor age:integer          
+ rails db:migrate
+rails g migration RemoveAgeFromAuthor age:integer
+rails g model Book name:string price:decimal
+bin/rails generate migration AddAuthorRefToBooks author:references
+Author.all
+Book.all
 
 
 

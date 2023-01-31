@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  root "home#index"
+  root "authors#index"
+  
 
-  get "/products", to: "home#index"
-  get "/products/:id", to: "home#show"
+  resources :authors do
+    resources :books
+  end
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

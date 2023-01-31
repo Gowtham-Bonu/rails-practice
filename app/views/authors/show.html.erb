@@ -1,0 +1,12 @@
+<h1><%= @author.first_name %></h1>
+<ul>
+  <li><%= link_to "Edit", edit_author_path(@author) %></li>
+</ul>
+<ul>
+  <li><%= link_to "Home", root_path %></li>
+  
+</ul>
+
+<ul>
+  <li><%= link_to "show books", author_books_path(@author) %></li>
+</ul>
