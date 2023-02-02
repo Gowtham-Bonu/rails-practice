@@ -1,29 +1,26 @@
 <table class="table table-striped">
+  <tr>
+  <th>name</th>
+  <th>price</th>
+  <th>edit</th>
+  <th>delete</th>
+  </tr>
+  <% @books.each do |book| %>
     <tr>
-    <th>name</th>
-    <th>price</th>
-    <th>edit</th>
-    <th>delete</th>
-    </tr>
-    <% @books.each do |book| %>
-        <tr>
-        <td><%= book.name %></td>
-        <td><%= book.price %></td>
-        <td><%= link_to "edit", edit_author_book_path(book.author, book) %>
-        <td><%= link_to "delete", author_book_path(book.author, book), data: {
-            turbo_method: :delete,
-            turbo_confirm: "Are you sure?"
-          } %></td>
+      <td><%= book.name %></td>
+      <td><%= book.price %></td>
+      <td><%= link_to "edit", edit_author_book_path(book.author, book) %>
+      <td><%= link_to "delete", author_book_path(book.author, book), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      } %></td>
         </tr>
     <% end %>
-
-
 </table>
 
 <ul>
-    
-    <li><%= link_to "add_book", new_author_book_path %></li>
-    <li><%= link_to "back-to-authors", authors_path %></li>
+  <li><%= link_to "add_book", new_author_book_path %></li>
+  <li><%= link_to "back-to-authors", authors_path %></li>
 </ul>
 
 

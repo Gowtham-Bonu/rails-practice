@@ -1,13 +1,18 @@
+# frozen_string_literal: true
+
 class AuthorsController < ApplicationController
   def index
     @authors = Author.all
   end
+
   def show
     @author = Author.find(params[:id])
   end
+
   def new
     @author = Author.new
   end
+
   def create
     @author = Author.new(author_params)
 
@@ -40,7 +45,8 @@ class AuthorsController < ApplicationController
   end
 
   private
-    def author_params
-      params.require(:author).permit(:first_name, :last_name, :date_of_birth, :email)
-    end
+
+  def author_params
+    params.require(:author).permit(:first_name, :last_name, :date_of_birth, :email)
+  end
 end
