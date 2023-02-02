@@ -1,8 +1,8 @@
-Rails.application.routes.draw do
+# frozen_string_literal: true
 
+Rails.application.routes.draw do
   get 'college/index'
-  root "college#index"
-  
+  root 'college#index'
 
   resources :authors do
     resources :books
@@ -10,7 +10,6 @@ Rails.application.routes.draw do
 
   resources :faculties
   resources :students
-
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

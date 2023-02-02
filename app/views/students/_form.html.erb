@@ -1,44 +1,44 @@
 <%= form_with model: student do |form| %>
 <div class="card container" >
-   <div class="card-body" >
-      <div class="mb-3" >
-         <%= form.label :first_name, { class: "form-label" } %><br>
-         <%= form.text_field :first_name, { class: "form-control", placeholder: "First Name" }  %>
-         <% student.errors.full_messages_for(:first_name).each do |message| %>
+  <div class="card-body" >
+    <div class="mb-3" >
+       <%= form.label :first_name, {class: "form-label"} %><br>
+       <%= form.text_field :first_name, {class: "form-control", placeholder: "First Name"}  %>
+       <% student.errors.full_messages_for(:first_name).each do |message| %>
          <div><%= message %></div>
-         <% end %>
+       <% end %>
       </div>
-      <div class="mb-3" >
-         <%= form.label :last_name, { class: "form-label" } %><br>
-         <%= form.text_field :last_name, { class: "form-control", placeholder: "Last Name" }  %>
-         <% student.errors.full_messages_for(:last_name).each do |message| %>
-         <div><%= message %></div>
-         <% end %>
+     <div class="mb-3" >
+        <%= form.label :last_name, {class: "form-label"} %><br>
+        <%= form.text_field :last_name, {class: "form-control", placeholder: "Last Name"}  %>
+        <% student.errors.full_messages_for(:last_name).each do |message| %>
+          <div><%= message %></div>
+        <% end %>
+     </div>
+     <div class="mb-3" >
+        <%= form.label :dob, {class: "form-label"} %><br>
+        <%= form.date_field :dob, {class: "form-control", placeholder: "dob"}  %>
+        <% student.errors.full_messages_for(:dob).each do |message| %>
+          <div><%= message %></div>
+        <% end %>
+     </div>
+     <div class="mb-3" >
+        <%= form.label :department, {class: "form-label"} %><br>
+        <%= form.text_field :department, {class: "form-control", placeholder: "department"}  %>
+        <% student.errors.full_messages_for(:department).each do |message| %>
+          <div><%= message %></div>
+        <% end %>
+     </div>
+     <div class="mb-3" >
+        <%= form.label :terms_of_usage, {class: "form-label"} %><br>
+        <%= form.check_box :terms_of_usage, default: true %>
+        <% student.errors.full_messages_for(:terms_of_usage).each do |message| %>
+          <div><%= message %></div>
+        <% end %>
       </div>
-      <div class="mb-3" >
-         <%= form.label :dob, { class: "form-label" } %><br>
-         <%= form.date_field :dob, { class: "form-control", placeholder: "dob" }  %>
-         <% student.errors.full_messages_for(:dob).each do |message| %>
-         <div><%= message %></div>
-         <% end %>
-      </div>
-      <div class="mb-3" >
-         <%= form.label :department, { class: "form-label" } %><br>
-         <%= form.text_field :department, { class: "form-control", placeholder: "department" }  %>
-         <% student.errors.full_messages_for(:department).each do |message| %>
-         <div><%= message %></div>
-         <% end %>
-      </div>
-      <div class="mb-3" >
-         <%= form.label :terms_of_usage, { class: "form-label" } %><br>
-         <%= form.check_box :terms_of_usage %>
-         <% student.errors.full_messages_for(:terms_of_usage).each do |message| %>
-         <div><%= message %></div>
-         <% end %>
-      </div>
-      <div>
-         <%= form.submit %>
-      </div>
-   </div>
+     <div>
+        <%= form.submit %>
+     </div>
+  </div>
 </div>
 <% end %>

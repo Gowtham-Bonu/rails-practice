@@ -1,12 +1,17 @@
+# frozen_string_literal: true
+
 class BooksController < ApplicationController
   def index
     @books = Book.where(author_id: params[:author_id])
   end
+
   def new
     @book = Book.new
   end
+
   def create
     @book = Book.new(book_params)
+
     if @book.save
       redirect_to author_books_path
     else
@@ -35,12 +40,9 @@ class BooksController < ApplicationController
     redirect_to author_books_path(@book.author.id), status: :see_other
   end
 
-
-
   private
-    def book_params
-      params.require(:book).permit(:name, :price, :author_id)
-    end
 
-
+  def book_params
+    params.require(:book).permit(:name, :price, :author_id)
+  end
 end

@@ -1,18 +1,18 @@
 <button type="button" class="btn btn-dark "><%= link_to "New Student", new_student_path %></button>
 <table class="table table-dark table-striped" >
-   <tr>
-      <th>first name</th>
-      <th>last name</th>
-      <th>dob</th>
-      <th>department</th>
-   </tr>
-   <% @students.each do |student| %>
-   <tr>
-      <td><%= student.first_name %></td>
-      <td><%= student.last_name %></td>
-      <td><%= student.dob %></td>
-      <td><%= student.department %></td>
-   </tr>
-   <% end %>
+  <tr>
+     <th>first name</th>
+     <th>last name</th>
+     <th>dob</th>
+     <th>department</th>
+  </tr>
+  <% @students.each do |student| %>
+  <tr>
+     <td><%= student.first_name %></td>
+     <td><%= student.last_name %></td>
+     <td><%= student.dob %></td>
+     <td><%= student.department %></td>
+  </tr>
+  <% end %>
 </table>
 <button type="button" class="btn btn-dark "><%= link_to "Back to college", college_index_path %></button>
