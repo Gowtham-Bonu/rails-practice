@@ -29,6 +29,13 @@
          <div><%= message %></div>
          <% end %>
       </div>
+      <div class="mb-3" >
+         <%= form.label :terms_of_usage, { class: "form-label" } %><br>
+         <%= form.check_box :terms_of_usage %>
+         <% student.errors.full_messages_for(:terms_of_usage).each do |message| %>
+         <div><%= message %></div>
+         <% end %>
+      </div>
       <div>
          <%= form.submit %>
       </div>
