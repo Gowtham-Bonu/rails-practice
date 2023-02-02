@@ -1,0 +1,27 @@
+<%= form_with model: @book, url: author_book_path do |form| %>
+    <%= form.hidden_field :author_id, value: params[:author_id]%> 
+    <div class="card container" >
+        <div class="card-body" >
+            <div class="mb-3" >
+            <%= form.label :name, { class: "form-label" }  %><br>
+            <%= form.text_field :name, { class: "form-control", placeholder: " Name" }  %>
+            <% @book.errors.full_messages_for(:name).each do |message| %>
+                <div><%= message %></div>
+            <% end %>
+            
+            </div>
+
+            <div class="mb-3" >
+            <%= form.label :price, { class: "form-label" }  %><br>
+            <%= form.text_field :price, { class: "form-control", placeholder: " Price " }  %><br>
+            <% @book.errors.full_messages_for(:price).each do |message| %>
+                <div><%= message %></div>
+            <% end %>
+            </div>
+
+            <div>
+            <%= form.submit %>
+            </div>
+        </div>
+    </div>
+<% end %>

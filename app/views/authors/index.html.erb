@@ -1,0 +1,28 @@
+<button type="button" class="btn btn-dark "><%= link_to "New Author", new_author_path %></button>
+<table class="table table-dark table-striped" >
+    <tr>
+        <th>author first name</th>
+        <th>author last name</th>
+        <th>author dob</th>
+        <th>author email</th>
+        <th>edit action</th>
+        <th>destroy action</th>
+        <th>book list</th>
+    </tr>
+    <% @authors.each do |author| %>
+        <tr>
+            <td><%= author.first_name %></td>
+            <td><%= author.last_name %></td>
+            <td><%= author.date_of_birth %></td>
+            <td><%= author.email %></td>
+            <td><%= link_to "Edit", edit_author_path(author) %></td>
+            <td><%= link_to "Destroy", author_path(author), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></td>
+            <td><%= link_to "Show Books", author_books_path(author) %></td>
+        </tr>
+    <% end %>
+</table>
+
+
