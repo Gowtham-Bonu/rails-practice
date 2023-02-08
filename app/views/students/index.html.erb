@@ -5,6 +5,7 @@
      <th>last name</th>
      <th>dob</th>
      <th>department</th>
+     <th>actions</th>
   </tr>
   <% @students.each do |student| %>
   <tr>
@@ -12,6 +13,7 @@
      <td><%= student.last_name %></td>
      <td><%= student.dob %></td>
      <td><%= student.department %></td>
+     <td><div><button class="edit"  ><%= link_to "edit", edit_student_path(student) %></button><button class="delete"><%= link_to "Destroy", student_path(student), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button></div></td>
   </tr>
   <% end %>
 </table>

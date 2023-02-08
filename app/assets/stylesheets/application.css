@@ -54,3 +54,16 @@ h1{
 .card{
     border: 0px;
 }
+.edit{
+    background-color: #212529;
+    color: white;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+.delete{
+    color: #212529;
+    background-color: white;
+    margin-right: 10px;
+    border-radius: 3px;
+    border-color: white;
+}
