@@ -8,7 +8,7 @@ class Student < ApplicationRecord
   before_validation :date_of_birth_of_student
 
   validates :department, inclusion: {in: %w(IT CE), message: " department can't be %{value}"}
-  validates :terms_of_usage, acceptance: {message: "You cannot proceed without accepting Terms of Usage"}
+  validates :terms_of_usage, acceptance: true
 
   after_initialize do |student|
     puts "You have initialized the #{student.first_name} object!"
