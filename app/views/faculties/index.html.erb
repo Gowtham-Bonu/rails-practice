@@ -7,6 +7,7 @@
     <th>author email</th>
     <th>dob</th>
     <th>designation</th>
+    <th>actions</th>
   </tr>
   <% @faculties.each do |faculty| %>
     <tr>
@@ -16,7 +17,10 @@
       <td><%= faculty.email_id %></td>
       <td><%= faculty.dob %></td>
       <td><%= faculty.designation %></td>
+      <td><div><button class="edit"  ><%= link_to "edit", edit_faculty_path(faculty) %></button><button class="delete"><%= link_to "Destroy", faculty_path(faculty), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button></div></td>
     </tr>
   <% end %>
 </table>
 <button type="button" class="btn btn-dark "><%= link_to "Back to college", college_index_path %></button>
+
+
